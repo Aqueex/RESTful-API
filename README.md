@@ -1,34 +1,34 @@
 # Express File Auth Service
 
-Modern web uygulamaları için geliştirilmiş, güvenli ve ölçeklenebilir bir RESTful API servisi. Bu proje, dosya yönetimi, kimlik doğrulama ve e-posta işlemleri gibi temel özellikleri tek bir çatı altında birleştiriyor.
+A secure and scalable RESTful API service designed for modern web applications. This project unifies essential features such as file management, authentication, and email operations under one roof.
 
-## 🌟 Temel Özellikler
+## 🌟 Core Features
 
-### 🔐 Güvenlik ve Kimlik Doğrulama
-- JWT (JSON Web Token) tabanlı güvenli kimlik doğrulama sistemi
-- Şifreli veri depolama ve güvenli oturum yönetimi
-- CORS koruması ve güvenlik başlıkları
-- Rate limiting ve brute force koruması
+### 🔐 Security and Authentication
+- Secure authentication system based on JWT (JSON Web Tokens)
+- Encrypted data storage and secure session management
+- CORS protection and security headers
+- Rate limiting and brute force attack protection
 
-### 📁 Dosya İşlemleri
-- Çoklu dosya yükleme desteği
-- Otomatik görüntü optimizasyonu ve boyutlandırma
-- Güvenli dosya depolama ve erişim kontrolü
-- Dosya tipi doğrulama ve virüs taraması
+### 📁 File Operations
+- Support for multiple file uploads
+- Automatic image optimization and resizing
+- Secure file storage and access control
+- File type validation and virus scanning
 
-### 📧 E-posta Servisi
-- HTML formatında e-posta gönderimi
-- Şablon tabanlı e-posta sistemi
-- Toplu e-posta gönderim desteği
-- E-posta doğrulama ve takip sistemi
+### 📧 Email Service
+- Sending emails in HTML format
+- Template-based email system
+- Bulk email sending support
+- Email verification and tracking system
 
-### 🗄️ Veritabanı ve Depolama
-- MongoDB ile ölçeklenebilir veri depolama
-- Verimli veri modelleme ve ilişkisel yapı
-- Otomatik veri yedekleme ve kurtarma
-- Veritabanı performans optimizasyonu
+### 🗄️ Database and Storage
+- Scalable data storage with MongoDB
+- Efficient data modeling and relational structure
+- Automated data backup and recovery
+- Database performance optimization
 
-## 🛠️ Teknoloji Stack'i
+## 🛠️ Technology Stack
 
 ### Backend
 - Node.js (v14+)
@@ -36,128 +36,128 @@ Modern web uygulamaları için geliştirilmiş, güvenli ve ölçeklenebilir bir
 - MongoDB (v5+)
 - Mongoose ODM
 
-### Güvenlik
+### Security
 - JWT (JSON Web Tokens)
 - bcryptjs
 - Helmet.js
 - CORS
 
-### Dosya İşleme
+### File Handling
 - Multer
 - Sharp
 - fs-extra
 
-### E-posta
+### Email
 - Nodemailer
 - HTML Templates
 
-### Doğrulama ve Validasyon
+### Validation
 - Joi
 - Express Validator
 
-## 🚀 Başlangıç
+## 🚀 Getting Started
 
-### Gereksinimler
-- Node.js (v14 veya üzeri)
-- MongoDB (v5 veya üzeri)
-- npm veya yarn
+### Requirements
+- Node.js (v14 or higher)
+- MongoDB (v5 or higher)
+- npm or yarn
 
-### Kurulum
+### Installation
 
-1. Repoyu klonlayın:
+1. Clone the repository:
 ```bash
 git clone https://github.com/Aqueex/RESTful-API
 cd RESTful-API
 ```
 
-2. Bağımlılıkları yükleyin:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Ortam değişkenlerini ayarlayın:
+3. Set environment variables:
 ```bash
 cp .env.example .env
-# .env dosyasını düzenleyin
+# Edit the .env file accordingly
 ```
 
-4. Uygulamayı başlatın:
+4. Start the application:
 ```bash
 npm start
 ```
 
-## 📁 Proje Yapısı
+## 📁 Project Structure
 
 ```
-├── config/         # Yapılandırma dosyaları
-├── controllers/    # İş mantığı kontrolcüleri
-├── middleware/     # Ara yazılımlar
-├── models/         # Veritabanı modelleri
-├── routes/         # API rotaları
-├── services/       # İş mantığı servisleri
-├── utils/          # Yardımcı fonksiyonlar
-├── uploads/        # Yüklenen dosyalar
-├── public/         # Statik dosyalar
-└── logs/          # Log dosyaları
+├── config/         # Configuration files
+├── controllers/    # Business logic controllers
+├── middleware/     # Middlewares
+├── models/         # Database models
+├── routes/         # API routes
+├── services/       # Business logic services
+├── utils/          # Utility functions
+├── uploads/        # Uploaded files
+├── public/         # Static files
+└── logs/           # Log files
 ```
 
-## 🔒 Güvenlik Özellikleri
+## 🔒 Security Features
 
-- JWT tabanlı kimlik doğrulama
-- Şifreli veri depolama
-- CORS koruması
+- JWT-based authentication
+- Encrypted data storage
+- CORS protection
 - Rate limiting
-- Dosya yükleme güvenliği
-- XSS ve CSRF koruması
-- SQL injection koruması
-- Güvenli başlık yapılandırması
+- Secure file upload handling
+- XSS and CSRF protection
+- SQL injection prevention
+- Secure header configuration
 
-## 📝 API Dokümantasyonu
+## 📝 API Documentation
 
-### Kimlik Doğrulama Endpoint'leri
-- `POST /register` - Yeni kullanıcı kaydı
-- `POST /login` - Kullanıcı girişi
-- `PATCH /avatarUpload/:id` - Profil fotoğrafı yükleme (Kimlik doğrulama gerekli)
-- `POST /forgot-password` - Şifre sıfırlama e-postası gönderme
-- `POST /reset-password` - Şifre sıfırlama
-- `GET /protected` - Kullanıcı bilgilerini getirme (Kimlik doğrulama gerekli)
+### Authentication Endpoints
+- `POST /register` - Register a new user
+- `POST /login` - User login
+- `PATCH /avatarUpload/:id` - Upload profile picture (authentication required)
+- `POST /forgot-password` - Send password reset email
+- `POST /reset-password` - Reset password
+- `GET /protected` - Retrieve user info (authentication required)
 
-### Test Yönetimi Endpoint'leri (Admin)
-- `POST /testCreate` - Yeni test oluşturma (Admin yetkisi gerekli)
-- `POST /questionCreate` - Test sorusu oluşturma (Admin yetkisi gerekli)
-- `GET /tests/:id` - Test ve sorularını getirme (Admin yetkisi gerekli)
+### Test Management Endpoints (Admin)
+- `POST /testCreate` - Create new test (admin privileges required)
+- `POST /questionCreate` - Create test question (admin privileges required)
+- `GET /tests/:id` - Retrieve test and questions (admin privileges required)
 
-## 🧪 Test
+## 🧪 Testing
 
 ```bash
-# Unit testleri çalıştırma
+# Run unit tests
 npm run test
 
-# Test coverage raporu
+# Test coverage report
 npm run test:coverage
 ```
 
-## 📈 Performans
+## 📈 Performance
 
-- Yüksek eşzamanlı istek desteği
-- Önbellek mekanizması
-- Asenkron işlem yönetimi
-- Veritabanı sorgu optimizasyonu
+- High concurrency request handling
+- Caching mechanisms
+- Asynchronous process management
+- Database query optimization
 
-## 🤝 Katkıda Bulunma
+## 🤝 Contributing
 
-1. Fork'layın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'feat: Add amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
+1. Fork the repository  
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)  
+3. Commit your changes (`git commit -m 'feat: Add amazing feature'`)  
+4. Push your branch (`git push origin feature/amazing-feature`)  
+5. Open a Pull Request
 
-## 📄 Lisans
+## 📄 License
 
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 📞 İletişim
+## 📞 Contact
 
-Proje Sahibi - [@azizcakmak](https://www.linkedin.com/in/azizcakmak/)
+Project Owner - [@azizcakmak](https://www.linkedin.com/in/azizcakmak/)
 
-Proje Linki: [Github](https://github.com/Aqueex/RESTful-API) 
+Project Link: [GitHub](https://github.com/Aqueex/RESTful-API)
